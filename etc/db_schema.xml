@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="test_module_table" comment="Test Mageplaza Blog Posts">
+        <column name="post_id" xsi:type="int" padding="10" unsigned="true" nullable="false" comment="Post ID"/>
+        <index referenceId="TEST_MODULE_TABLE_POSTS_POST_ID" indexType="btree">
+            <column name="post_id"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="TEST123" table="test_mageplaza" column="post_id" referenceTable="test_table" referenceColumn="post_id" onDelete="CASCADE"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="post_id"/>
+        </constraint>
+    </table>
+</schema>
